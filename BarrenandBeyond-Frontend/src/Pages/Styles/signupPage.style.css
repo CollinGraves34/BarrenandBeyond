@@ -1,0 +1,62 @@
+body {
+    background-color: rgb(60, 60, 60)
+}
+.copyright {
+    color: aliceblue;
+    margin: auto;
+    text-align: center;
+    margin-top: 10px;
+}
+.signup-card {
+    margin: auto;
+    width: 60%;
+    min-width: 250px;
+    margin-top: 5%;
+    height: 50vh;
+    min-width: 650px;
+    min-height: 80vh;
+}
+
+.signup-card-header {
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+    color: #632123;
+}
+
+.signup-card-body {
+    transform: translateY(10%);
+    padding: 5px;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+.mb-3 {
+    text-align: left;
+}
+.submitBtn {
+    width: 50%;
+    margin: auto;
+}
+
+.divider {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+}
+.text {
+    float: left;
+    padding-top: 5px;
+}
+.signupBtn {
+    margin-top: 5%;
+    width: 50%;
+    margin: auto;
+}
+
+.alert-confirmpass {
+    margin: auto;
+    padding: 5px;
+    width: 100%;
+    text-align: center;
+}

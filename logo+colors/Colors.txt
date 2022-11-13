@@ -1,0 +1,19 @@
+Burgundy
+--------------
+RGB 99-33-35
+Hex #632123
+
+Gold
+--------------
+RGB 255-194-15
+Hex #ffc20f
+
+Light Grey
+--------------
+RGB 255-194-15
+Hex #C7BCBC
+
+Dark Grey
+--------------
+RGB 119-119-119
+Hex #3f3f3f
