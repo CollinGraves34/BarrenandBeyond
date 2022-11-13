@@ -71,7 +71,7 @@ export default function LoginPage() {
                         <br/>
                         <Button variant="primary" type="submit" className='submitBtn' onClick={handleSubmit}>Login!</Button>
                         <br/><br/>
-                        <Button variant="success" type="link" href='/signup' className='signupBtn'>Goto Sign Up</Button>
+                        <Button variant="success" type='button' onClick={navigate('/')} className='signupBtn'>Goto Sign Up</Button>
                     </Form>
                 </Card.Body>
             </Card>

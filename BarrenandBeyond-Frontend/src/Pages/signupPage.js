@@ -109,7 +109,7 @@ export default function SignupPage() {
                         <br/>
                         <Button variant="success" type="submit" onClick={event => handleSubmit(event)} className='submitBtn'>Sign Up!</Button>
                         <br/><br/>
-                        <Button variant="primary" type="link" href='/' className='signupBtn'>Goto Login</Button>
+                        <Button variant="primary" type="button" onClick={navigate('/')} className='signupBtn'>Goto Login</Button>
                     </Form>
                 </Card.Body>
             </Card>
