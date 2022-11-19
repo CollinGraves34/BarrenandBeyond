@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import Alert from 'react-bootstrap/Alert';
 import './Styles/signupPage.style.css';
 import logo from '../Resources/Images/Logo.png';
-
+import {Link} from "react-router-dom";
 export default function SignupPage() {
 
     const auth = getAuth();
@@ -114,7 +114,7 @@ export default function SignupPage() {
                         <br/>
                         <Button variant="success" type="submit" onClick={event => handleSubmit(event)} className='submitBtn'>Sign Up!</Button>
                         <br/><br/>
-                        <a href='/' className='signinLink'>Already have an account?</a>
+                        <Link to='/' className='signinLink'>Already have an account?</Link>
                     </Form>
                 </Card.Body>
             </Card>

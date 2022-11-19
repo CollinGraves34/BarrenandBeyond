@@ -7,3 +7,13 @@
     margin-left: 15%;
     font-size: 80%;
 }
+
+.link {
+    color: rgb(200, 200, 200);
+    font-size: large;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: rgb(255, 255, 255);
+}

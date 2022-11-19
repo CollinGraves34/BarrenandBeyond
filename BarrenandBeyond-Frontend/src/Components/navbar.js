@@ -3,7 +3,7 @@ import logo from '../Resources/Images/Logo.png';
 import React, { useState, useEffect } from "react";
 import './Styles/navbar.js.css';
 import CheckAuth from '../Firebase/checkAuth';
-
+import {Link} from "react-router-dom";
 export default function Navi() {
     return (
         <Navbar bg="dark" variant="dark" className='navi'>
@@ -18,11 +18,11 @@ export default function Navi() {
             Barren and Beyond
           </Navbar.Brand>
           <Nav className="me-auto links">
-              <Nav.Link href='/home'>Home</Nav.Link>
-              <Nav.Link href='/latest-posts'>Latest Posts</Nav.Link>
-              <Nav.Link href='/account'>My Profile</Nav.Link>
-              <Nav.Link href='/members'>Members</Nav.Link>
-              {CheckAuth() ? <Nav.Link href='/logout'>Logout</Nav.Link>: <Nav.Link href='/'>Login</Nav.Link>}
+            <Nav.Link><Link to='/home' className='link'>Home</Link></Nav.Link>
+            <Nav.Link><Link to='/latest-posts' className='link'>Latest Posts</Link></Nav.Link>
+            <Nav.Link><Link to='/account' className='link'>My Profile</Link></Nav.Link>
+            <Nav.Link><Link to='/members' className='link'>Members</Link></Nav.Link>
+              {CheckAuth() ? <Nav.Link><Link to='/logout' className='link'>Logout</Link></Nav.Link>: <Nav.Link><Link to='/' className='link'>Login</Link></Nav.Link>}
           </Nav>
         </Container>
       </Navbar>
