@@ -1,18 +1,20 @@
 import {React, useState, useRef} from 'react';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+import {Card, Button, Form} from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
-
+import Alert from 'react-bootstrap/Alert';
 import './Styles/loginPage.style.css';
 import logo from '../Resources/Images/Logo.png';
 
 export default function LoginPage() {
     const auth = getAuth();
     const navigate = useNavigate();
-    const emailRef = useRef(null);
-    const passwordRef = useRef(null);
+
+    const [wasCreated, setCreated] = useState({
+        state: false,
+        message: '',
+        type: ''
+    })
     
     const [formData, updateFormData] = useState({
         email: '',
@@ -24,13 +26,15 @@ export default function LoginPage() {
         .then((userCredential) => {
             // Signed in 
             const user = userCredential.user;
-            navigate(`/home?user=${user.displayName};email=${user.email}`)
+            navigate(`/home`)
         })
         .catch((error) => {
             const errorCode = error.code;
-            const errorMessage = error.message;
-            alert(errorCode, errorMessage)
-            navigate('/');
+            setCreated({
+                ['state']: true,
+                ['message']: `${errorCode}`,
+                ['type']: 'danger'
+              });
         });
     }
 
@@ -43,7 +47,11 @@ export default function LoginPage() {
         if (formData.email && formData.password) {
             login(formData.email, formData.password)
         } else {
-            alert(`email or password was left blank`);
+            setCreated({
+                ['state']: true,
+                ['message']: `Email or Password was left blank`,
+                ['type']: 'danger'
+              });
         }
       };
 
@@ -54,6 +62,7 @@ export default function LoginPage() {
                     <img alt="logo" src={logo} width='15%'/>
                 </Card.Header>
                 <Card.Title style={{textAlign: 'center', padding: '15px'}}>Please login or signup to continue to Barren and Beyond</Card.Title>
+                <Alert show={wasCreated.state} style={{textAlign: 'center'}} variant={wasCreated.type}>{wasCreated.message}</Alert>
                 <Card.Body className='login-card-body'>
                     <Form>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -71,7 +80,7 @@ export default function LoginPage() {
                         <br/>
                         <Button variant="primary" type="submit" className='submitBtn' onClick={handleSubmit}>Login!</Button>
                         <br/><br/>
-                        <Button variant="success" type='button' onClick={navigate('/')} className='signupBtn'>Goto Sign Up</Button>
+                        <a type='link' href='/signup' className='signupLink'>Don't have an account?</a>
                     </Form>
                 </Card.Body>
             </Card>

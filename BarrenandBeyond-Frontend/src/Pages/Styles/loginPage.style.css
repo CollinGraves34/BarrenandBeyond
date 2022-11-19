@@ -47,8 +47,9 @@ body {
     float: left;
     padding-top: 5px;
 }
-.signupBtn {
+.signupLink {
     margin-top: 5%;
     width: 50%;
     margin: auto;
+    color: #198754;
 }

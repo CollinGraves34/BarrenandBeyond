@@ -1,0 +1,59 @@
+.account-card{
+    text-align: center;
+    margin: auto;
+    width: 60%;
+    margin-top: 50px;
+    padding: 5px;
+
+}
+.title{
+    font-size: 160%;
+    padding: 5px;
+}
+.input{
+    margin: auto;
+    width: 50%;
+
+}
+.verifyEmail {
+    width: 30%;
+    margin: auto;
+    padding: 2px;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.verifiedEmail {
+    text-align: center;
+    transform: translateY(18%);
+    width: fit-content;
+    height: 100%;
+    padding: 5px;
+    margin-top: -5%;
+    margin-left: auto;
+    font-size: 12px;
+    display: inline;
+}
+#basic-addonSub2 {
+    padding: 0;
+}
+
+#uid {
+    font-size: 12px;
+}
+
+.changePass{
+    float: left;
+}
+
+.controlGroup{
+    padding: 5px;
+    width: 50%;
+    margin: auto;
+}
+
+.editBtn {
+    float: right;
+    padding: 5px;
+    width: 150px;
+}

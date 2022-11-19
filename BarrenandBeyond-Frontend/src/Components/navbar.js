@@ -5,7 +5,6 @@ import './Styles/navbar.js.css';
 import CheckAuth from '../Firebase/checkAuth';
 
 export default function Navi() {
-
     return (
         <Navbar bg="dark" variant="dark" className='navi'>
         <Container>
@@ -20,7 +19,10 @@ export default function Navi() {
           </Navbar.Brand>
           <Nav className="me-auto links">
               <Nav.Link href='/home'>Home</Nav.Link>
-              {CheckAuth() ? <Nav.Link href='/logout'>Logout</Nav.Link>: <Nav.Link href='/login'>Login</Nav.Link>}
+              <Nav.Link href='/latest-posts'>Latest Posts</Nav.Link>
+              <Nav.Link href='/account'>My Profile</Nav.Link>
+              <Nav.Link href='/members'>Members</Nav.Link>
+              {CheckAuth() ? <Nav.Link href='/logout'>Logout</Nav.Link>: <Nav.Link href='/'>Login</Nav.Link>}
           </Nav>
         </Container>
       </Navbar>

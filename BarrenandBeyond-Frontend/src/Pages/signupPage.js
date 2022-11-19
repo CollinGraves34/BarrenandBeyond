@@ -13,11 +13,13 @@ export default function SignupPage() {
     const auth = getAuth();
     const navigate = useNavigate();
     const [passMatch, setPassMatch] = useState(false)
+
     const [wasCreated, setCreated] = useState({
       state: false,
       message: '',
       type: ''
     })
+    
     const [formData, updateFormData] = useState({
       email: '',
       password: '',
@@ -36,16 +38,17 @@ export default function SignupPage() {
         });
       })
       .catch((error) => {
+        console.log(error.message)
         setCreated({
           ['state']: true,
-          ['message']: `${error}`,
+          ['message']: `${error.message}`,
           ['type']: 'danger'
         })
       });
     }
 
     const handleChange = event => {
-        updateFormData({ ...formData, [event.target.name]: event.target.value });
+      updateFormData({ ...formData, [event.target.name]: event.target.value });
     }
 
     const handleSubmit = event => {
@@ -58,12 +61,14 @@ export default function SignupPage() {
             ['message']: `Password's don't match`,
             ['type']: 'danger'
           });
+          console.log(wasCreated.state, wasCreated.message, wasCreated.type)
         } else {
           setCreated({
-            ['state']: true,
+            ['state'] : true,
             ['message']: 'Some info is still needded',
             ['type']: 'danger'
           });
+          console.log(wasCreated.state, wasCreated.message, wasCreated.type)
         }   
       };
 
@@ -109,7 +114,7 @@ export default function SignupPage() {
                         <br/>
                         <Button variant="success" type="submit" onClick={event => handleSubmit(event)} className='submitBtn'>Sign Up!</Button>
                         <br/><br/>
-                        <Button variant="primary" type="button" onClick={navigate('/')} className='signupBtn'>Goto Login</Button>
+                        <a href='/' className='signinLink'>Already have an account?</a>
                     </Form>
                 </Card.Body>
             </Card>
